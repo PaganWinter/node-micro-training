@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: EurekaServerdemo
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: RPS
+Implementation-Vendor-Id: com.anz.ecommerce
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/EurekaServer
+ demo/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
