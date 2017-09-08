@@ -1,26 +1,34 @@
-[{
-  "host": "localhost",
-  "port": "10000",
-  "redirects":[{
-    "path": "/getCustomers",
-    "method": "get"
+[
+  {
+    "host": "localhost",
+    "port": "3000",
+    "redirects":[
+      {
+        "path": "/customers",
+        "method": "get"
+      },
+      {
+        "path": "/customers",
+        "method": "post"
+      },
+      {
+        "path": "/accounts",
+        "method": "get"
+      },
+      {
+        "path": "/accounts",
+        "method": "post"
+      }
+    ]
   },
-    {
-      "path": "/animal/:id",
-      "method": "get"
-    },
-    {
-      "path": "/animal",
-      "method": "post"
-    }]
-},
   {
     "host": "localhost",
     "port": "4000",
-    "redirects":[{
-      "path": "/user",
-      "method": "get"
-    },
+    "redirects":[
+      {
+        "path": "/user",
+        "method": "get"
+      },
       {
         "path": "/user/:id",
         "method": "get"
@@ -28,5 +36,7 @@
       {
         "path": "/user",
         "method": "post"
-      }]
-  }]
+      }
+    ]
+  }
+]

@@ -37,16 +37,20 @@ var storedFunction = [];
 // registers a route for each request
 for(var i = 0; i < mappings.length; i++){
     for(var j = 0; j < mappings[i].redirects.length; j++){
-        var method = mappings[i].redirects[j].method === undefined?"GET":mappings[i].redirects[j].method;
+        var method = (mappings[i].redirects[j].method === undefined) ? "GET" : mappings[i].redirects[j].method;
         storedFunction.push(appMethod(mappings[i].host, mappings[i].port, mappings[i].redirects[j].path, method));
-        console.log("[INIT] Created route to %s %s:%s%s ", method.toUpperCase(),mappings[i].host, mappings[i].port, mappings[i].redirects[j].path);
+        console.log("[INIT] Created route to %s %s:%s%s ",
+          method.toUpperCase(),
+          mappings[i].host,
+          mappings[i].port,
+          mappings[i].redirects[j].path);
     }
 }
+console.log(storedFunction)
 
 // starts the server
 var server = app.listen('7070', function () {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('[INFO] listening at http://%s:%s', host, port);
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('[INFO] listening at http://%s:%s', host, port);
 });
