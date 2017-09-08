@@ -1,0 +1,82 @@
+Start server
+------------
+mongod --port 27017 --dbpath C:\Users\RPS\Desktop\NODEJS\mongodb_1
+
+Start client
+------------
+mongod --port 27017
+
+3 storage options with mongodb
+
+Create DB
+---------
+use <db-name>
+use bankingdb
+
+Create table/collection
+-----------------------
+db.createCollection(<collection-name>, <config>)
+db.createCollection("accounts", {
+  capped: true,
+  size : 5242880,
+  max : 5000,
+  validator: {
+    $and: [
+      { type: { $type: "string" } },
+      { balance: { $type: "number" } },
+      { status: { $in: ["Active", "Inactive"] } }
+    ]
+  },
+  validationLevel: "strict",
+  validationAction: "error"
+})
+
+/*
+Use table/collection
+--------------------
+use <db-name>
+use bankingdb
+*/
+
+Insert row/document
+-------------------
+db.<collection-name>.insert(<data-object>)
+db.customers.insert({ id: 123, name: "John Doe" })
+db.customers.insert({ _id: 0001, id: null, name: "Keyser Soze" })
+
+db.customers.insert({ id: 111, addr: {ciye: "Mumbai", country: "India" }, accounts: [12,34,56] })
+
+
+db.accounts.insert({ type: "Savings", balance: 1000, status: "Active" })
+db.accounts.insert({ type: "Savings", balance: 1000, status: "Active" })
+
+
+Select row/document
+-------------------
+db.<collection-name>.find()
+db.customers.find()
+db.customers.find({name: "Kevin Spacey"})
+db.customers.find({name: "Kevin Spacey"}, {_id: 0})
+
+Update row/document
+-------------------
+db.<collection-name>.update(<params>)
+db.customers.update({id: 123}, {$set: {name: "Jane Doe"}})
+db.customers.update({_id: 1}, {$set:{name: "Kevin Spacey"}})
+
+Delete row/document
+-------------------
+db.<collection-name>.remove(<params>)
+db.customers.remove({id: 123})
+
+Drop collection
+---------------
+db.customers.drop()
+
+
+
+
+
+
+
+
