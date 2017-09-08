@@ -1,0 +1,55 @@
+section
+{
+	width:50%;
+	margin-left:15%;
+	margin-top:5%;
+}
+
+
+
+legend
+{
+	text-align:center;
+}
+
+label
+{
+width:40%;
+margin-left: 2%;
+margin-bottom: 2%;
+float:left;
+	
+}
+
+input,select
+{
+	
+	width:40%;
+
+margin-bottom: 2%;
+float:left;
+}
+.errors
+{
+	list-style:disc;
+
+	margin-left:30%;
+	width:80%;
+ color:red;
+margin-bottom: 2%;
+display:block;
+}
+
+input[type=submit]
+{
+	width:30%;
+ margin-left:42%;
+margin-bottom: 2%;
+background-color: blue;
+color:white;
+}
+h1
+{
+
+	text-align: center;
+}
