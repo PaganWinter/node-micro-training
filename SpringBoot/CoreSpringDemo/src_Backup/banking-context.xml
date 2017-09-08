@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="date" class="java.util.Date">
+	<constructor-arg index="0" value="122"></constructor-arg>
+	<constructor-arg index="1" value="10"></constructor-arg>
+	<constructor-arg index="2" value="11"></constructor-arg>
+	</bean>
+	
+	<bean id="dc" class="com.anz.banking.models.DebitCard">
+	<property name="cardNo" value="123123123"></property>
+	<property name="cvv" value="123"></property>
+	<property name="balance" value="1000"></property>
+	<property name="debitLimit" value="10000"></property>
+	<property name="expiryDate" ref="date"></property>
+	</bean>
+	
+	<bean id="customer" class="com.anz.banking.models.Customer">
+	<property name="accountNo" value="123123123"></property>
+	<property name="name" value="Sunil"></property>
+	<property name="email" value="abc@xyz.com"></property>
+	<property name="customerId" value="123"></property>
+	<property name="debitCardList">
+	<list>
+	<ref bean="dc"/>
+	</list>
+	</property>
+	</bean>
+	
+</beans>

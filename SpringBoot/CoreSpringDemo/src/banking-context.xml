@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.anz.banking"></context:component-scan>
+	<bean id="date" class="java.util.Date">
+	<constructor-arg index="0" value="122"></constructor-arg>
+	<constructor-arg index="1" value="9"></constructor-arg>
+	<constructor-arg index="2" value="21"></constructor-arg>
+	</bean>
+	
+	<bean id="dc" class="com.anz.banking.models.DebitCard">
+	 <property name="cardNo" value="000000000"></property>
+	 <property name="cvvNo" value="C123"></property>
+	 <property name="balance" value="42545"></property>
+	 <property name="debitLimit" value="20000"></property>
+	 <property name="expiryDate" ref="date"></property>	    
+	</bean>
+	
+	<bean id="dc2" class="com.anz.banking.models.DebitCard">
+	 <property name="cardNo" value="43856465456"></property>
+	 <property name="cvvNo" value="C2343"></property>
+	 <property name="balance" value="434345"></property>
+	 <property name="debitLimit" value="3000"></property>
+	 <property name="expiryDate" ref="date"></property>	    
+	</bean>
+	
+	<bean id="customer" class="com.anz.banking.models.Customer">
+	<property name="accountNo" value="439567843"></property>
+	<property name="name" value="Santhosh"></property>
+	<property name="email" value="santhosh@gmail.com"></property>
+	<property name="customerId" value="4254253"></property>
+	<property name="address" value="Bangalore"></property>
+	<property name="debitCardList">
+	<list>
+	<ref bean="dc"/>
+	</list>
+	
+	</property>
+	
+	</bean>
+	<bean id="pcustomer" class="com.anz.banking.models.PrivilegedCustomer" parent="customer">
+	<property name="rmContactNo" value="9988776655"></property>
+	<property name="discount" value="0.5"></property>
+	</bean>
+	
+	<bean id="transaction" class="com.anz.banking.models.Transaction">
+	<constructor-arg index="0" value="123456"></constructor-arg>
+	<constructor-arg index="1" value="5000"></constructor-arg>
+	</bean>
+	
+</beans>
