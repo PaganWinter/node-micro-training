@@ -1,0 +1,22 @@
+section
+{
+	width:80%;
+	height:200px;
+	
+}
+img
+{
+	float:left;
+	
+}
+p{
+	float:left;
+	margin-top: 5%;
+	font-size: xx-large;
+	color:blue;
+}
+
+a
+{
+	margin-top: 15%;
+}
