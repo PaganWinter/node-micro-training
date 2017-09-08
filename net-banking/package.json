@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "mongoose": "^4.11.10",
-    "angular": "^1.6.6"
+    "angular": "^1.6.6",
+    "express": "^4.15.4",
+    "cors": "^2.8.4"
   }
 }
