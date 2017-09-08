@@ -31,7 +31,7 @@
         <input type="number" id="acct-balance" placeholder="Balance" ng-model="account.balance" />
 
         <label for="acct-customerRef">CustomerRef:</label>
-        <select id="acct-customerRef" ng-model="account.customerRef">
+        <select id="acct-customerRef" ng-model="account.customerId">
             <option>---</option>
             <option ng-repeat="cust in customers" value="{{cust['id']}}">{{cust.name}}</option>
         </select>
