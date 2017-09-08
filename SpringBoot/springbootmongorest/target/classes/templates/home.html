@@ -1,0 +1,148 @@
+<html>
+
+    <head>
+
+        <title>MongoDB/Spring Boot tutorial</title>
+
+        <style>
+
+            table
+
+            {
+
+              width:60%;
+
+              margin-left:20%;
+
+            }
+
+            td
+
+            {
+
+            width:25%;
+
+            
+
+            
+
+            }
+
+            table, th, td {
+
+               border: 1px solid black;
+
+               border-spacing: 0px;
+
+            }
+
+            th, td {
+
+                padding: 10px;
+
+            }
+
+            form
+
+            {
+
+             width:50%;
+
+              margin-left:20%;
+
+            }
+
+            input,textarea
+
+            {
+
+            width:20%;
+
+            margin-bottom:3%;
+
+            
+
+            }
+
+            
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Loan No</th>
+
+                    <th>Loan Type</th>
+
+                    <th>Start Date</th>
+
+                    <th>Loan Amount</th>
+                    
+                    <th>Interest Rate</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr th:each="loan : ${loanList}">
+
+                    <td th:text="${loan.loanNo}"></td>
+
+                    <td th:text="${loan.loanType}"></td>
+
+                    <td th:text="${loan.startDate}"></td>
+
+                    <td th:text="${loan.loanAmount}"></td>
+                    
+                    <td th:text="${loan.interestRate}"></td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <br />
+
+        <h2>Add Loan</h2>
+
+        <form action="/addLoan" method="POST">
+
+           <input type="number" id="loanNo" name="loanNo" placeholder="Number"/><br />
+
+           <input type="text" id="loanType" name="loanType" placeholder="Loan Type"/><br />
+
+           <input type="date" id="year" name="startDate" placeholder="Date"/><br />
+           
+           <input type="number" id="loanAmount" name="loanAmount" placeholder="Amount"/><br />
+           
+           <input type="number" id="interestRate" name="interestRate" placeholder="Rate"/><br />
+
+
+            <input type="submit" />
+
+        </form>
+
+        <h2>Search for cars</h2>
+
+        <form action="/search" method="POST">
+
+            <input type="text" name="search" id="search" th:value="${search}" />
+
+            <input type="submit" value="search" />
+
+        </form>
+
+    </body>
+
+</html>

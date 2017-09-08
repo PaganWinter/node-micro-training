@@ -1,0 +1,18 @@
+server:
+  port: 2222
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+spring:
+  application:
+    name: loan-service
+    data:
+      mongodb:
+        host: localhost
+        port: 27017
+        database: accountsdb
+      
+      
