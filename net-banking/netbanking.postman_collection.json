@@ -1,0 +1,102 @@
+{
+	"variables": [],
+	"info": {
+		"name": "netbanking",
+		"_postman_id": "80014cb7-ea56-ff5e-5901-ee35305ad7d4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "home",
+			"request": {
+				"url": "localhost:3000",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add customers",
+			"request": {
+				"url": "localhost:3000/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"id\": 667,\n \"name\": \"Lucifer's cousin\",\n \"email\": \"cousin@hell.com\",\n \"phone\": \"+91806666777\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add account",
+			"request": {
+				"url": "localhost:3000/accounts",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"num\": 670,\n \"type\": \"savings\",\n \"balance\": 666000,\n \"customerId\": 1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all accounts",
+			"request": {
+				"url": "localhost:3000/accounts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"num\": 667,\n \"type\": \"savings\",\n \"balance\": 666000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all customers",
+			"request": {
+				"url": "localhost:3000/customers",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"id\": 667,\n \"name\": \"Lucifer's cousin\",\n \"email\": \"cousin@hell.com\",\n \"phone\": \"+91806666777\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
