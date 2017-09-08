@@ -1,0 +1,15 @@
+{
+  "name": "net-banking",
+  "version": "1.0.0",
+  "description": "Net Banking app with client and server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.11.10",
+    "angular": "^1.6.6"
+  }
+}

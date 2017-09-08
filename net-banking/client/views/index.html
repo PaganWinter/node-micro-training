@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Netbanking - Customers</title>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script> -->
+<script src="/static/angular.js"></script>
+<script src="/static/modules/customer-module.js"></script>
+<script src="/static/services/customer-service.js"></script>
+<script src="/static/controllers/customer-controller.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/views/main.css"
+</head>
+<body ng-app="CustomerApp">
+<a href="accounts.html">Accounts</a>
+<section ng-controller="CustomerController">
+    <fieldset>
+        <legend>Customer</legend>
+        <label for="cust-id">Id:</label>
+            <input type="number" id="cust-id" placeholder="Id" ng-model="customer.id" value="123" />
+        <label for="cust-name">Name:</label>
+            <input type="text" id="cust-name" placeholder="Name" ng-model="customer.name" value="Name 1" />
+        <label for="cust-email">Email:</label>
+            <input type="email" id="cust-email" placeholder="Email" ng-model="customer.email" value=name@email.com" />
+        <label for="cust-phone">Phone:</label>
+            <input type="tel" id="cust-phone" placeholder="Phone" ng-model="customer.phone" value="+91123456789" />
+        <input type="submit" ng-click="addCustomer(customer)" value="Add Customer" />
+        <input type="button" ng-click="getCustomers()" value="Get Customers" />
+    </fieldset>
+    <span>{{status}}</span><br /><br /><br />
+<!--    <div>{{customer | json}}</div> -->
+    <table>
+        <tr>
+            <th>ID</th><th>Name</th><th>Email</th><th>Phone</th>
+        </tr>
+        <tr ng-repeat="cust in customers">
+            <td>{{cust.id}}</td><td ng-click="test(cust)" style="color: #4CAF50; cursor: pointer;">{{cust.name}}</td><td>{{cust.email}}</td><td>{{cust.phone}}</td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>

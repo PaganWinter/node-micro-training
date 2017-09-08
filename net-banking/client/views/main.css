@@ -1,0 +1,63 @@
+body {
+  font-family: "Trebuchet MS";
+}
+section {
+    margin: 0 auto;
+    width: 50%;
+}
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+legend {
+//    text-align: center;
+}
+label {
+    display: block;
+    padding: 2px;
+    font-size: 14px;
+}
+input, select {
+    display: block;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+input[type="text"], input[type="number"], input[type="tel"], input[type="email"], select {
+    color: #4CAF50;
+}
+select {
+  padding: 5px;
+}
+input[type="submit"], input[type="button"] {
+    margin: 10px 0;
+    cursor: pointer;
+}
+table {
+    font-size: 16px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+table th {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+table td a {
+    color: #4CAF50;
+}
+

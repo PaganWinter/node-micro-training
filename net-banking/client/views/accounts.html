@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Netbanking - Accounts</title>
+<script src="/static/angular.js"></script>
+<script src="/static/modules/customer-module.js"></script>
+<script src="/static/services/customer-service.js"></script>
+<script src="/static/modules/account-module.js"></script>
+<script src="/static/services/account-service.js"></script>
+<script src="/static/controllers/account-controller.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/views/main.css"
+</head>
+<body ng-app="AccountApp">
+<a href="index.html">Customers</a>
+<section ng-controller="AccountController">
+    <fieldset>
+        <legend>Account</legend>
+        <label for="acct-num">Number:</label>
+        <input type="number" id="acct-num" placeholder="Number" ng-model="account.num" />
+
+        <label for="acct-type">Type:</label>
+        <select id="acct-type" ng-model="account.type">
+            <option>---</option>
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+            <option value="fixed">Fixed</option>
+        </select>
+
+        <label for="acct-balance">Balance:</label>
+        <input type="number" id="acct-balance" placeholder="Balance" ng-model="account.balance" />
+
+        <label for="acct-customerRef">CustomerRef:</label>
+        <select id="acct-customerRef" ng-model="account.customerRef">
+            <option>---</option>
+            <option ng-repeat="cust in customers" value="{{cust['id']}}">{{cust.name}}</option>
+        </select>
+
+        <input type="submit" ng-click="addAccount(account)" value="Add Account" />
+    </fieldset>
+
+    <table>
+        <tr>
+            <th>A/C Number</th><th>Customer</th><th>Type</th><th>Balance</th>
+        </tr>
+        <tr ng-repeat="acct in accounts">
+            <td>{{acct.num}}</td><td ng-click="test(acct)" style="color: #4CAF50; cursor: pointer;">{{custMap[acct.customerRef].name}}</td><td>{{acct.balance}}</td><td>{{acct.type}}</td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>
